@@ -1,13 +1,16 @@
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework import routers
+# from rest_framework import routers
 from blogapi import views
 
-router = routers.DefaultRouter()
-router.register(r'posts', views.PostViewSet)
+# router = routers.DefaultRouter()
+# router.register(r'posts', views.PostViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    # path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', views.PostListApiView.as_view()),
+    path('posts/', views.PostListApiView.as_view()),
+    path('posts/<int:pk>/', views.PostDetailApiView.as_view()),
 ]
