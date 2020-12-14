@@ -10,7 +10,7 @@ Django Rest Api  |  Django Version: 3.1.3
 `python -m venv apienv`  <br>
 
 - Active the environment
-`apienv/Scripts/activate`  <br>
+`apienv/Scripts/activate` (optional: run `Set-ExecutionPolicy RemoteSigned` in windows powershell as Administrator if scripts is disabled) <br>
 
 - Install Django
 `pip install django`  <br>
